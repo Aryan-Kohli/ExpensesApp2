@@ -16,30 +16,30 @@ const Event1 = ({route ,navigation}) => {
       </Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity onPress={()=>{navigation.navigate("Members",{event:event})}}>
+      {/* <TouchableOpacity onPress={()=>{navigation.navigate("Members",{event:event})}}> */}
 
-      <View style={[styles.eventInner, styles.eventLayout]} >
+      <TouchableOpacity onPress={()=>{navigation.navigate("Members",{event:event})}} style={[styles.eventInner, styles.eventLayout]} >
          <Text style={[styles.seeAllMembers, styles.addTypo]}>
         See all members
       </Text>
-        </View>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={()=>{navigation.navigate("AddTransactions",{event:event})}}>
+        </TouchableOpacity>
+      {/* </TouchableOpacity> */}
+      {/* <TouchableOpacity onPress={()=>{navigation.navigate("AddTransactions",{event:event})}}> */}
 
-      <View style={[styles.rectangleView, styles.eventLayout]} >
+      <TouchableOpacity  onPress={()=>{navigation.navigate("AddTransactions",{event:event})}} style={[styles.rectangleView, styles.eventLayout]} >
          <Text style={[styles.addTansaction, styles.addTypo]}>Add Transactions</Text>
-      </View>
       </TouchableOpacity>
+      {/* </TouchableOpacity> */}
 
-      <TouchableOpacity onPress={()=>{navigation.navigate("Transactions",{event:event})}}>
-      <View style={styles.frameView}>
+      {/* <TouchableOpacity onPress={()=>{navigation.navigate("Transactions",{event:event})}}> */}
+      <TouchableOpacity  onPress={()=>{navigation.navigate("Transactions",{event:event})}} style={styles.frameView}>
         <View style={[styles.frameChild, styles.eventLayout]} >
            <Text style={[styles.seeAllTransaction, styles.addTypo]}>
-        See all transaction
+        See all transactions
       </Text>
           </View>
-      </View>
-      </TouchableOpacity >
+      </TouchableOpacity>
+      {/* </TouchableOpacity > */}
         
       <Text style={styles.eventName}>{event.name}</Text>
 
@@ -154,6 +154,7 @@ const styles = StyleSheet.create({
   addNewMember: {
     top: 12,
     left: 24,
+    position:"relative"
   },
   seeAllMembers: {
     top: 12,
@@ -161,7 +162,7 @@ const styles = StyleSheet.create({
   },
   addTansaction: {
     top: 10,
-    left: 56,
+    left: "14%",
   },
   seeAllTransaction: {
     top: 10,

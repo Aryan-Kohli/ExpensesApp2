@@ -24,14 +24,14 @@ const Transactions = ({route,navigation}) => {
 )}
 {event.transactions.length > 0 && (
   <View>
-    <View style={[styles.rectangleView, styles.rectangleViewPosition]} />
+    <View style={[styles.rectangleView, styles.rectangleViewPosition2]} />
     <Text style={[styles.payer, styles.descPosition]}>Members</Text>
     <Text style={[styles.desc, styles.descTypo]}>Payer</Text>
     <Text style={[styles.amount, styles.textTypo]}>Amount</Text>
     <View style={{position:"relative", top:175}}>
     {event.transactions.map((transaction, index) => {
       return (
-        <View style={{backgroundColor:Color.colorDarkslategray_100, marginVertical:15, paddingHorizontal:22, flexDirection:"row", alignItems:"center", paddingVertical:10}} key={index}>
+        <View style={{backgroundColor:Color.colorDarkslategray_100, marginVertical:12, paddingHorizontal:22, flexDirection:"row", alignItems:"center", paddingVertical:10}} key={index}>
           <Text style={{fontSize:18, color:Color.colorWhite , fontWeight:"700"}}>{transaction.payer}</Text>
           <Text style={{fontSize:18,  color:Color.colorWhite ,fontWeight:"700", position:"absolute", left:160}}>{transaction.members.length}</Text>
           <Text style={{fontSize:18, color:Color.colorWhite , fontWeight:"700", position:"absolute", left:260}}>{transaction.amount}</Text>
@@ -53,6 +53,10 @@ const styles = StyleSheet.create({
     left: 19,
     position: "absolute",
   },
+  rectangleViewPosition2: {
+    // left: 19,
+    position: "absolute",
+  },
   transactionsChildLayout: {
     width: 336,
     borderRadius: Border.br_11xl,
@@ -68,7 +72,7 @@ const styles = StyleSheet.create({
     position: "absolute",
   },
   descPosition: {
-    top: 132,
+    top: 125,
     fontStyle: "italic",
   },
   descTypo: {
@@ -165,7 +169,7 @@ const styles = StyleSheet.create({
     top: 107,
     borderRadius: Border.br_xl,
     backgroundColor: Color.colorSteelblue_100,
-    width: 329,
+    width: "100%",
     height: 70,
   },
   payer: {
@@ -178,11 +182,11 @@ const styles = StyleSheet.create({
     left: 120,
   },
   desc: {
-    top: 132,
+    top: 125,
     fontStyle: "italic",
   },
   amount: {
-    top: 132,
+    top: 125,
     left: 239,
     fontStyle: "italic",
     fontFamily: FontFamily.interExtraBold,

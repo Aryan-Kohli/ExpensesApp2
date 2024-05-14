@@ -73,12 +73,18 @@ async function handleSaveTransactions() {
       (m) => m.name === selectedMembers[i]
     );
     if (memberIndex !== -1) {
-      if(eventToUpdate.members[memberIndex].credit>=amountPerPerson)
+      if(eventToUpdate.members[memberIndex].credit>0)
       {
+        if(eventToUpdate.members[memberIndex].credit>=amountPerPerson){
         eventToUpdate.members[memberIndex].credit -= amountPerPerson;
+        }
+        else{
+          eventToUpdate.members[memberIndex].debit += amountPerPerson-eventToUpdate.members[memberIndex].credit;
+          eventToUpdate.members[memberIndex].credit=0;
+        }
       }
       else{
-        eventToUpdate.members[memberIndex].debit += amountPerPerson-eventToUpdate.members[memberIndex].credit;
+        eventToUpdate.members[memberIndex].debit += amountPerPerson;
         eventToUpdate.members[memberIndex].credit=0;
       }
     }
@@ -86,6 +92,17 @@ async function handleSaveTransactions() {
 
   for (let i = 0; i < eventToUpdate.members.length; i++) {
     if (eventToUpdate.members[i].name === selected) {
+      if(eventToUpdate.members[i].debit>0)
+      {
+        if(eventToUpdate.members[i].debit>=amountPerPerson){
+        eventToUpdate.members[i].debit -= amountPerPerson*(selectedMembers.length);
+        }
+        else{
+          eventToUpdate.members[i].credit += amountPerPerson*(selectedMembers.length)-eventToUpdate.members[i].debit;
+          eventToUpdate.members[i].debit=0;
+        }
+      }
+      else
       eventToUpdate.members[i].credit += amountPerPerson*(selectedMembers.length);
     }
   }

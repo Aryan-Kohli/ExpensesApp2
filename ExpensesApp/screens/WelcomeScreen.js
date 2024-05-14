@@ -59,18 +59,19 @@ const WelcomeScreen = ({navigation}) => {
           "#40a5dc",
         ]}
       />
-      <TouchableOpacity onPress={()=>{navigation.navigate("EventPage")}}>
-        <View>
+      {/* <TouchableOpacity onPress={()=>{navigation.navigate("EventPage")}}> */}
+        <TouchableOpacity onPress={()=>{navigation.navigate("EventPage")}}>
       <View style={styles.welcomeScreenChild1} />
 
       <Text style={styles.getStarted}>GET STARTED</Text>
-        </View>
-      </TouchableOpacity>
-      <Image
+       <Image
         style={styles.arrowIcon}
         contentFit="cover"
         source={require("../assets/arrow-1.png")}
-      />
+        />
+        </TouchableOpacity >
+     
+        {/* </TouchableOpacity> */}
       <Text style={[styles.welcomeToExpense, styles.allExpensesInClr]}>
         Welcome to Expense
       </Text>
@@ -94,7 +95,7 @@ const WelcomeScreen = ({navigation}) => {
 
 const styles = StyleSheet.create({
   welcomeScreenChildPosition: {
-    width: 359,
+    width: 365,
     left: -3,
     position: "absolute",
   },
@@ -201,7 +202,7 @@ const styles = StyleSheet.create({
   },
   welcomeScreenChild1: {
     marginLeft: -109,
-    top: 680,
+    top: 668,
     borderRadius: Border.br_xl,
     backgroundColor: "#292323",
     width: 226,
@@ -210,17 +211,17 @@ const styles = StyleSheet.create({
     position: "absolute",
   },
   getStarted: {
-    top: 700,
+    top: 685,
     left: 98,
     fontSize: 22,
     color: "#f2cdcd",
     textAlign: "left",
     fontFamily: FontFamily.interExtraBold,
     fontWeight: "800",
-    position: "absolute",
+    position: "relative",
   },
   arrowIcon: {
-    top: 710,
+    top: 693,
     left: 256,
     height:15,
     // maxHeight: "100%",
@@ -228,8 +229,8 @@ const styles = StyleSheet.create({
     position: "absolute",
   },
   welcomeToExpense: {
-    top: 528,
-    left: 8,
+    top: 508,
+    left: 24,
     fontSize: FontSize.size_13xl,
     width: 374,
     fontFamily: FontFamily.interExtraBold,
@@ -238,15 +239,15 @@ const styles = StyleSheet.create({
   },
   allExpensesIn: {
     marginLeft: -152,
-    top: 577,
+    top: 547,
     fontSize: FontSize.size_5xl,
     fontStyle: "italic",
     fontWeight: "700",
     fontFamily: FontFamily.interBold,
-    left: "50%",
+    left: "55%",
   },
   welcomeScreenChild2: {
-    top: 610,
+    top: 585,
     left: 134,
     width: 93,
     height: 79,
