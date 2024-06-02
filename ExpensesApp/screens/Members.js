@@ -28,8 +28,8 @@ const Members = ({route,navigation}) => {
           marginVertical:10, paddingHorizontal:10,paddingVertical:10, height:110}}>
             
             <Text style={styles.name}>{member.name}</Text>
-            <Text style={styles.give}>GIVE: {member.debit}/-</Text>
-            <Text style={styles.take}>TAKE: {member.credit}/-</Text>
+            <Text style={styles.give}>GIVE: {member.debit.toFixed(2)} /-</Text>
+            <Text style={styles.take}>TAKE: {member.credit.toFixed(2)} /-</Text>
           </View>
         );
       })}
@@ -82,9 +82,10 @@ const styles = StyleSheet.create({
     fontFamily: FontFamily.interSemiBold,
     fontWeight: "600",
     fontStyle: "italic",
-    fontSize: 25,
+    fontSize: 20,
     position: "absolute",
     top:60,
+    // maxWidth:130,
     },
     take:{ left: 180,
     textAlign: "left",
@@ -92,7 +93,7 @@ const styles = StyleSheet.create({
     fontFamily: FontFamily.interSemiBold,
     fontWeight: "600",
     fontStyle: "italic",
-    fontSize: 25,
+    fontSize: 20,
     position: "absolute",
     top:60, 
     },

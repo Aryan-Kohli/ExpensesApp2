@@ -25,11 +25,9 @@ export default function InfoScreen() {
         <Text style={styles.subHead}>Welcome to our money-splitting app! Never worry about uneven expenses during trips again. With our app, effortlessly split costs and track expenses among friends. Simplify your group finances and enjoy hassle-free adventures together</Text>
         <View style={{marginVertical:25,height:50}}></View>
         <Text style={styles.heads}>Made by :</Text>
-        <Text style={styles.heads}>Aryan Kohli & Yashika</Text>
-        {/* <Text style={styles.heads}>& Yashika</Text> */}
+        <Text style={styles.heads}>Aryan Kohli (Developer)</Text>
+        <Text style={styles.heads}>& Yashika (Designer)</Text>
         <View style={{marginVertical:10,height:10}}></View>
-        <Text style={styles.heads}>Instructed by : </Text>
-        <Text style={styles.heads}>Mrs. Anshika Negi</Text>
       </View>
     </SafeAreaView>
   );

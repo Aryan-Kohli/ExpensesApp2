@@ -73,37 +73,67 @@ async function handleSaveTransactions() {
       (m) => m.name === selectedMembers[i]
     );
     if (memberIndex !== -1) {
-      if(eventToUpdate.members[memberIndex].credit>0)
+      // if(eventToUpdate.members[memberIndex].credit>0)
+      // {
+      //   if(eventToUpdate.members[memberIndex].credit>=amountPerPerson){
+      //   eventToUpdate.members[memberIndex].credit -= amountPerPerson;
+      //   }
+      //   else{
+      //     eventToUpdate.members[memberIndex].debit += amountPerPerson-eventToUpdate.members[memberIndex].credit;
+      //     eventToUpdate.members[memberIndex].credit=0;
+      //   }
+      // }
+      // else{
+      //   eventToUpdate.members[memberIndex].debit += amountPerPerson;
+      //   eventToUpdate.members[memberIndex].credit=0;
+      // }
+      eventToUpdate.members[memberIndex].debit+=amountPerPerson;
+      var cm = eventToUpdate.members[memberIndex].credit;
+      var dm = eventToUpdate.members[memberIndex].debit;
+      if(cm>0)
       {
-        if(eventToUpdate.members[memberIndex].credit>=amountPerPerson){
-        eventToUpdate.members[memberIndex].credit -= amountPerPerson;
+        if(cm>=dm)
+        {
+          eventToUpdate.members[memberIndex].credit=cm-dm;
+          eventToUpdate.members[memberIndex].debit=0;
         }
         else{
-          eventToUpdate.members[memberIndex].debit += amountPerPerson-eventToUpdate.members[memberIndex].credit;
           eventToUpdate.members[memberIndex].credit=0;
+          eventToUpdate.members[memberIndex].debit=dm-cm;
         }
-      }
-      else{
-        eventToUpdate.members[memberIndex].debit += amountPerPerson;
-        eventToUpdate.members[memberIndex].credit=0;
       }
     }
   }
 
   for (let i = 0; i < eventToUpdate.members.length; i++) {
     if (eventToUpdate.members[i].name === selected) {
-      if(eventToUpdate.members[i].debit>0)
+      // if(eventToUpdate.members[i].debit>0)
+      // {
+      //   if(eventToUpdate.members[i].debit>=amountPerPerson){
+      //   eventToUpdate.members[i].debit -= amountPerPerson*(selectedMembers.length);
+      //   }
+      //   else{
+      //     eventToUpdate.members[i].credit += amountPerPerson*(selectedMembers.length)-eventToUpdate.members[i].debit;
+      //     eventToUpdate.members[i].debit=0;
+      //   }
+      // }
+      // else
+      // eventToUpdate.members[i].credit += amountPerPerson*(selectedMembers.length);
+      eventToUpdate.members[i].credit += amountPerPerson*(selectedMembers.length);
+      var cm = eventToUpdate.members[i].credit;
+      var dm = eventToUpdate.members[i].debit;
+      if(dm>0)
       {
-        if(eventToUpdate.members[i].debit>=amountPerPerson){
-        eventToUpdate.members[i].debit -= amountPerPerson*(selectedMembers.length);
+        if(dm>=cm)
+        {
+          eventToUpdate.members[i].debit=dm-cm;
+          eventToUpdate.members[i].credit=0;
         }
         else{
-          eventToUpdate.members[i].credit += amountPerPerson*(selectedMembers.length)-eventToUpdate.members[i].debit;
           eventToUpdate.members[i].debit=0;
+          eventToUpdate.members[i].credit=cm-dm;
         }
       }
-      else
-      eventToUpdate.members[i].credit += amountPerPerson*(selectedMembers.length);
     }
   }
   eventToUpdate.transactions.push({

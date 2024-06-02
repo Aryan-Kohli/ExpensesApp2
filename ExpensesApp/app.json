@@ -34,6 +34,9 @@
       "eas": {
         "projectId": "363f32bc-b9f2-4e6e-9cb8-bf85d638d9f5"
       }
-    }
+    },
+    "plugins": [
+      "expo-font"
+    ]
   }
 }
