@@ -6,11 +6,11 @@
 
 ### Using our app, you can easily split the money among your friends.
 
-<img src="./ExpensesApp/assets/screenshots/s1.jpg" alt="Screenshot of App" height="200">
-<img src="./ExpensesApp/assets/screenshots/s2.jpg" alt="Screenshot of App" height="200">
-<img src="./ExpensesApp/assets/screenshots/s3.jpg" alt="Screenshot of App" height="200">
-<img src="./ExpensesApp/assets/screenshots/s4.jpg" alt="Screenshot of App" height="200">
-<img src="./ExpensesApp/assets/screenshots/s6.jpg" alt="Screenshot of App" height="200">
-<img src="./ExpensesApp/assets/screenshots/s5.jpg" alt="Screenshot of App" height="200">
-<img src="./ExpensesApp/assets/screenshots/s7.jpg" alt="Screenshot of App" height="200">
-<img src="./ExpensesApp/assets/screenshots/s8.jpg" alt="Screenshot of App" height="200">
+<img src="./ExpensesApp/assets/screenshots/s1.jpg" alt="Screenshot of App" height="500">
+<img src="./ExpensesApp/assets/screenshots/s2.jpg" alt="Screenshot of App" height="500">
+<img src="./ExpensesApp/assets/screenshots/s3.jpg" alt="Screenshot of App" height="500">
+<img src="./ExpensesApp/assets/screenshots/s4.jpg" alt="Screenshot of App" height="500">
+<img src="./ExpensesApp/assets/screenshots/s6.jpg" alt="Screenshot of App" height="500">
+<img src="./ExpensesApp/assets/screenshots/s5.jpg" alt="Screenshot of App" height="500">
+<img src="./ExpensesApp/assets/screenshots/s7.jpg" alt="Screenshot of App" height="500">
+<img src="./ExpensesApp/assets/screenshots/s8.jpg" alt="Screenshot of App" height="500">
