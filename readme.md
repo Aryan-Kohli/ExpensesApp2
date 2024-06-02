@@ -1,4 +1,4 @@
-### Expenses Splitting App
+# Expenses Splitting App
 
 ### Have you ever gone on trips with your friends and found it difficult to split money?
 
